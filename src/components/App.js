@@ -63,13 +63,12 @@ function App() {
     }
 
     function handleCardDelete(card) {
-        console.log(card)
         const isOwn = card.owner._id === currentUser._id;
         api.deleteCard(card._id, isOwn)
             .then(res => {
-                setCards((state) => {
-                    state.filter((item) => item._id === card._id ? res : item)
-                })
+                setCards(
+                    cards.filter(item => {return item._id !== card._id})
+                )
             })
             .catch((err) => {
                 console.log(err);
