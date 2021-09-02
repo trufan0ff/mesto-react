@@ -18,7 +18,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "react-scripts build&&gh-pages -d build",
-    "homepage" : "https://trufan0ff.github.io/mesto-react/"
+    "homepage": "https://trufan0ff.github.io/mesto-react"
   },
   "eslintConfig": {
     "extends": [
@@ -37,5 +37,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "terser-brunch": "^4.1.0"
   }
 }
