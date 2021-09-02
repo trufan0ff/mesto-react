@@ -16,7 +16,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "homepage" : "http://trufan0ff.github.io/mesto-react",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
