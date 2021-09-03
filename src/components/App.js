@@ -4,7 +4,7 @@ import Main from "./Main.js";
 import Footer from "./Footer.js";
 import EditAvatarPopup from "./EditAvatarPopup.js";
 import EditProfilePopup from "./EditProfilePopup.js";
-import AddPlacePopup from "./AddPlacePopup .js";
+import AddPlacePopup from "./AddPlacePopup.js";
 import { useEffect } from "react";
 import api from "../utils/Api";
 import React from "react";
@@ -15,7 +15,11 @@ import { CurrentUserContext } from '../contexts/CurrentUserContext.js'
 function App() {
 
     const [selectedCard, setSelectedCard] = React.useState(null);
-    const [currentUser, setCurrentUser] = React.useState({});
+    const [currentUser, setCurrentUser] = React.useState({
+        name: '',
+        about: '',
+        _id: '',
+    });
     const [cards, setCards] = React.useState([]);
 
     useEffect(() => {
@@ -39,7 +43,6 @@ function App() {
     }, [setCurrentUser])
 
     function handleAddPlaceSubmit({ name, link }) {
-        console.log(name, link)
         api.addCard(name, link)
             .then(newCard => {
                 setCards([newCard, ...cards]);
@@ -66,9 +69,8 @@ function App() {
         const isOwn = card.owner._id === currentUser._id;
         api.deleteCard(card._id, isOwn)
             .then(res => {
-                setCards(
-                    cards.filter(item => {return item._id !== card._id})
-                )
+                setCards(cards.filter(item => {return item._id !== card._id}))
+                closeAllPopups()
             })
             .catch((err) => {
                 console.log(err);
@@ -118,7 +120,6 @@ function App() {
     }
 
     function handleUpdateAvatar({ avatar }) {
-        console.log(avatar)
         api.updateAvatar(avatar)
             .then((res) => {
                 setCurrentUser(res)

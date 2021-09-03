@@ -19,6 +19,7 @@
 @import "./blocks/elements/elements.css";
 @import "./blocks/element/element.css";
 @import "./blocks/element/__delete/element__delete.css";
+@import "./blocks/element/__delete/_type/element__delete_type_hidden.css";
 @import "./blocks/element/__group_likes/element__group_likes.css";
 @import "./blocks/element/__count_heart/element__count_heart.css";
 @import "./blocks/element/__image/element__image.css";

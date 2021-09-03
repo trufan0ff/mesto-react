@@ -1,4 +1,6 @@
 {
+  "author": "Труфанов Виктор",
+  "description": "Рефакторинг проекта mesto с тспользованием реакта",
   "name": "mesto-react",
   "homepage": "https://trufan0ff.github.io/mesto-react",
   "version": "0.1.0",
